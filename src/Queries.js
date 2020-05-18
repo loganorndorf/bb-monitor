@@ -8,7 +8,7 @@ const options = {
 };
 
 const pgp = require('pg-promise')(options);
-const dbString = `postgresql://postgres:$avageXL7@localhost:5432/bestbuy`;
+const dbString = ``;
 // const cn = {
 //   host: '127.0.0.1',
 //   port: 5432,
