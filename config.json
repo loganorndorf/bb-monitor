@@ -1,0 +1,7 @@
+{
+    "port": 8080,
+    "slack": {
+      "active": true,
+      "webhook_url": "https://hooks.slack.com/services/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"
+    }
+}

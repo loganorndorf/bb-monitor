@@ -1,0 +1,39 @@
+{% include "partials/header.html" %}
+<main role="main" class="container">
+{% if status == 'Active' %}
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow" style="background-color: #4ea523cf;">
+    <a class="btn btn-sm btn btn-outline-light" href="/stop" style="margin-right: 20px; width: 64px;">Stop</a>
+    <div class="lh-100">
+      <h6 class="mb-0 text-white lh-100">Currently Active</h6>
+      <p id="startTime" hidden>{{ startTime }}</p>
+      <small id="uptime">Started</small>
+    </div>
+  </div>
+{% endif %}
+
+{% if status == 'Stopped' %}
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow" style="background-color: #f70f0fcf;">
+    <a class="btn btn-sm btn btn-outline-light" href="/start" style="margin-right: 20px; width: 64px;">Start</a>
+    <div class="lh-100">
+      <h6 class="mb-0 text-white lh-100">Currently Inactive</h6>
+    </div>
+  </div>
+{% endif %}
+</main>
+
+<!-- Bootstrap core JavaScript
+   ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script>
+setInterval(function() {
+  var dataStamp = $('#startTime').text();
+
+  $('#uptime').text('Started ' + moment(dataStamp, 'x').fromNow())
+}, 1000);
+</script>
+{% include "partials/footer.html" %}
