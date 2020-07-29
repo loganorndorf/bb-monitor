@@ -14,7 +14,7 @@ const dbString = ``;
 //   port: 5432,
 //   database: 'bestbuy',
 //   user: 'postgres',
-//   password: '$avageXL7',
+//   password: '',
 //   max: 30
 // };
 const db = pgp(dbString);
